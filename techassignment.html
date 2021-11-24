@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Technical assignment 1</title>
+</head>
+<body>
+
+<h2>Soal 2<h2>
+<p>Leaderboard : [200, 100, 100, 50, 10] </p>
+<p>Rank : <p id="demo"></p></p>
+<p>Player : [20, 80, 80, 10, 10, 300] </p>
+<p>Rank : <p id="demo1"></p></p>
+<h2>Soal 3<h2>
+<p id="makeid"></p>
+<h2>Soal 1<h2>
+<pre>
+<script type="text/javascript">
+let n = 5;
+let string = " ";
+
+for(let i = 0; i < n; i++) {
+  for(let j = 0; j < n; j++) {
+    if(i === 0 || i === n - 1) {
+      document.write("*");
+    }
+    else {
+      if(j === 0 || j === n - 1) {
+        document.write("*");
+      }
+      else {
+        document.write(" ");
+      }
+    }
+  }
+  document.write("<br>");
+}
+var points = [200, 100, 100, 50, 10]
+var sorted = points.slice().sort(function(a,b){return b-a})
+var ranks = points.map(function(v){ return sorted.indexOf(v)+1 });
+document.getElementById("demo").innerHTML = ranks;
+
+var points1 = [20, 80, 80, 10, 10, 300]
+var sorted1 = points1.slice().sort(function(a,b){return b-a})
+var ranks1 = points1.map(function(v){ return sorted1.indexOf(v)+1 });
+document.getElementById("demo1").innerHTML = ranks1;
+
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ab';
+    var charactersLength = characters.length;
+    for ( var i = 1; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+ charactersLength));
+   }
+   return result;
+}
+document.getElementById("makeid").innerHTML = makeid(17);
+</script>
+</pre>
+</body>
+</html>
